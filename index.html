@@ -19,15 +19,19 @@
         // display a custom cursor
         // request gif from giphy
 
-        offset = Math.floor(Math.random() * 100);
-        url = "https://api.giphy.com/v1/gifs/search?api_key=WyLJlCFUtHoDO6xV1EpQr9sFzB7qsTEY&q=cat&limit=1&offset=" + offset;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                let gif = data.data[0].images.original.url;
-                document.querySelector(".cursor img").src = gif;
-            })
+        function newCat() {
+            offset = Math.floor(Math.random() * 100);
+            url = "https://api.giphy.com/v1/gifs/search?api_key=WyLJlCFUtHoDO6xV1EpQr9sFzB7qsTEY&q=cat&limit=1&offset=" + offset;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    let gif = data.data[0].images.original.url;
+                    document.querySelector(".cursor img").src = gif;
+                })
+        }
+
+        newCat();
+
     </script>
     <style>
         body {
@@ -49,6 +53,7 @@
     <div class="cursor">
         <img src="" alt="">
     </div>
+    <button onclick="newCat()">New cat</button>
     <h1>你好</h1>
     <h3>Hi</h3>
 
