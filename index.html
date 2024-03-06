@@ -3,7 +3,7 @@
 
 <head>
     <title>This is the title of the page</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
@@ -32,10 +32,21 @@
 
         newCat();
 
+        function empty() {
+            document.querySelector("#username").value = "";
+            document.querySelector("#email").value = "";
+            document.querySelector("#password").value = "";
+        }
+
+        function empty2() {
+            document.querySelector("#username2").value = "";
+            document.querySelector("#password2").value = "";
+        }
+
     </script>
     <style>
         body {
-            background-image: url("favicon-16x16.png");
+            background-image: url("apple-touch-icon.png");
             color: white;
             text-shadow: 2px 2px 4px #000000;
             font-family: "Comic Sans MS", "HanziPen TC", sans-serif;
@@ -44,6 +55,22 @@
         .newsize {
             width: 300px;
             height: 300px;
+        }
+
+        .sign_up_form {
+            width: 300px;
+            background-color: rgba(150, 150, 150, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .sign_up_form input,
+        .sign_up_form button {
+            width: 300px;
+            height: 30px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
         }
     </style>
 </head>
@@ -54,62 +81,30 @@
         <img src="" alt="">
     </div>
     <button onclick="newCat()">New cat</button>
-    <h1>你好</h1>
-    <h3>Hi</h3>
 
-    <p style="background-color: darkgreen;">This is a test p tag</p>
-    <span style="background-color: darkgreen;">This is a test span tag</span>
-
-    <div>
-        <p class="newsize" style="background-color: darkgreen; font-size: 30px;">This is a test p tag</p>
-        <span class="newsize" style="background-color: darkgreen; font-size: 30px;">This is a test span tag</span>
+    <div class="sign_up_form">
+        <h2 style="color: black; text-shadow: none;">Sign up</h2>
+        <input type="text" id="username" placeholder="Username">
+        <br>
+        <input type="email" id="email" placeholder="Email">
+        <br>
+        <input type="password" id="password" placeholder="Password">
+        <br>
+        <button onclick="empty();">
+            Sign up
+        </button>
     </div>
-
-    <ol>
-        <li>first one</li>
-        <li>second element</li>
-        <li>C</li>
-        <li>D</li>
-        <li>E</li>
-    </ol>
-
-    <ol start="7">
-        <li>first one starts at seven</li>
-        <li>second element</li>
-        <li>wow</li>
-        <li>so</li>
-        <li>cool</li>
-    </ol>
-
-    <ul>
-        <li>this</li>
-        <li>is</li>
-        <li>an</li>
-        <li>unordered</li>
-        <li>list</li>
-    </ul>
-
-    <b>Bold text</b><br>
-    <strong>dasdsa</strong><br>
-    <i>asdasdsd</i><br>
-    <em>asdasdds</em>
-    <br><br>
-    <mark>fdsadsad</mark><br>
-    <small>adasd</small><br>
-    <del>asdasdkjh</del><br>
-    <ins>asdasd</ins><br>
-    sd<sub>asasd</sub><br>
-    sd<sup>adsasd</sup>
-
-    <img src="favicon-32x32.png" alt="">
-
-    <a href="https://google.com">go to google wows</a>
-
-    <form>
-        <input type="text" placeholder="username">
-        <input type="password" placeholder="password">
-        <input type="submit" value="submit">
-    </form>
+    <br>
+    <div class="sign_up_form">
+        <h2 style="color: black; text-shadow: none;">Sign in</h2>
+        <input type="text" id="username2" placeholder="Username">
+        <br>
+        <input type="password" id="password2" placeholder="Password">
+        <br>
+        <button onclick="empty2();">
+            Sign in
+        </button>
+    </div>
 
 </body>
 
