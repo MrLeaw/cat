@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>This is the title of the page</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="description" content="web programming">
+    <meta name="keywords" content="HTML5,CSS,JS,PHP">
+    <meta name="author" content="Felix">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
+    <script>
+        // display a custom cursor
+        // request gif from giphy
+
+        offset = Math.floor(Math.random() * 100);
+        url = "https://api.giphy.com/v1/gifs/search?api_key=WyLJlCFUtHoDO6xV1EpQr9sFzB7qsTEY&q=cat&limit=1&offset=" + offset;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let gif = data.data[0].images.original.url;
+                document.querySelector(".cursor img").src = gif;
+            })
+    </script>
+    <style>
+        body {
+            background-image: url("favicon-16x16.png");
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            font-family: "Comic Sans MS", "HanziPen TC", sans-serif;
+        }
+
+        .newsize {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: red;">Cat GIF of the day:</h1>
+    <div class="cursor">
+        <img src="" alt="">
+    </div>
+    <h1>你好</h1>
+    <h3>Hi</h3>
+
+    <p style="background-color: darkgreen;">This is a test p tag</p>
+    <span style="background-color: darkgreen;">This is a test span tag</span>
+
+    <div>
+        <p class="newsize" style="background-color: darkgreen; font-size: 30px;">This is a test p tag</p>
+        <span class="newsize" style="background-color: darkgreen; font-size: 30px;">This is a test span tag</span>
+    </div>
+
+    <ol>
+        <li>first one</li>
+        <li>second element</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+    </ol>
+
+    <ol start="7">
+        <li>first one starts at seven</li>
+        <li>second element</li>
+        <li>wow</li>
+        <li>so</li>
+        <li>cool</li>
+    </ol>
+
+    <ul>
+        <li>this</li>
+        <li>is</li>
+        <li>an</li>
+        <li>unordered</li>
+        <li>list</li>
+    </ul>
+
+    <b>Bold text</b><br>
+    <strong>dasdsa</strong><br>
+    <i>asdasdsd</i><br>
+    <em>asdasdds</em>
+    <br><br>
+    <mark>fdsadsad</mark><br>
+    <small>adasd</small><br>
+    <del>asdasdkjh</del><br>
+    <ins>asdasd</ins><br>
+    sd<sub>asasd</sub><br>
+    sd<sup>adsasd</sup>
+
+    <img src="favicon-32x32.png" alt="">
+
+    <a href="https://google.com">go to google wows</a>
+
+    <form>
+        <input type="text" placeholder="username">
+        <input type="password" placeholder="password">
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+
+</html>
