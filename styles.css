@@ -1,0 +1,27 @@
+body {
+    background-image: url("apple-touch-icon.png");
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: "Comic Sans MS", "HanziPen TC", sans-serif;
+}
+
+.newsize {
+    width: 300px;
+    height: 300px;
+}
+
+.sign_up_form {
+    width: 300px;
+    background-color: rgba(150, 150, 150, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sign_up_form input,
+.sign_up_form button {
+    width: 300px;
+    height: 30px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}

@@ -1,111 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+    <head>
+        <title>This is the title of the page</title>
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta charset="utf-8" />
+        <meta name="description" content="web programming" />
+        <meta name="keywords" content="HTML5,CSS,JS,PHP" />
+        <meta name="author" content="Felix" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
 
-<head>
-    <title>This is the title of the page</title>
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta charset="utf-8">
-    <meta name="description" content="web programming">
-    <meta name="keywords" content="HTML5,CSS,JS,PHP">
-    <meta name="author" content="Felix">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        // display a custom cursor
-        // request gif from giphy
+    <body>
+        <h1 style="color: red">Cat GIF of the day:</h1>
+        <div class="cursor">
+            <img src="" alt="" />
+        </div>
+        <button onclick="newCat()">New cat</button>
 
-        function newCat() {
-            offset = Math.floor(Math.random() * 100);
-            url = "https://api.giphy.com/v1/gifs/search?api_key=WyLJlCFUtHoDO6xV1EpQr9sFzB7qsTEY&q=cat&limit=1&offset=" + offset;
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    let gif = data.data[0].images.original.url;
-                    document.querySelector(".cursor img").src = gif;
-                })
-        }
-
-        newCat();
-
-        function empty() {
-            document.querySelector("#username").value = "";
-            document.querySelector("#email").value = "";
-            document.querySelector("#password").value = "";
-        }
-
-        function empty2() {
-            document.querySelector("#username2").value = "";
-            document.querySelector("#password2").value = "";
-        }
-
-    </script>
-    <style>
-        body {
-            background-image: url("apple-touch-icon.png");
-            color: white;
-            text-shadow: 2px 2px 4px #000000;
-            font-family: "Comic Sans MS", "HanziPen TC", sans-serif;
-        }
-
-        .newsize {
-            width: 300px;
-            height: 300px;
-        }
-
-        .sign_up_form {
-            width: 300px;
-            background-color: rgba(150, 150, 150, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .sign_up_form input,
-        .sign_up_form button {
-            width: 300px;
-            height: 30px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-        }
-    </style>
-</head>
-
-<body>
-    <h1 style="color: red;">Cat GIF of the day:</h1>
-    <div class="cursor">
-        <img src="" alt="">
-    </div>
-    <button onclick="newCat()">New cat</button>
-
-    <div class="sign_up_form">
-        <h2 style="color: black; text-shadow: none;">Sign up</h2>
-        <input type="text" id="username" placeholder="Username">
-        <br>
-        <input type="email" id="email" placeholder="Email">
-        <br>
-        <input type="password" id="password" placeholder="Password">
-        <br>
-        <button onclick="empty();">
-            Sign up
-        </button>
-    </div>
-    <br>
-    <div class="sign_up_form">
-        <h2 style="color: black; text-shadow: none;">Sign in</h2>
-        <input type="text" id="username2" placeholder="Username">
-        <br>
-        <input type="password" id="password2" placeholder="Password">
-        <br>
-        <button onclick="empty2();">
-            Sign in
-        </button>
-    </div>
-
-</body>
-
+        <div class="sign_up_form">
+            <h2 style="color: black; text-shadow: none">Sign up</h2>
+            <input type="text" id="username" placeholder="Username" />
+            <br />
+            <input type="email" id="email" placeholder="Email" />
+            <br />
+            <input type="password" id="password" placeholder="Password" />
+            <br />
+            <button onclick="empty();">Sign up</button>
+        </div>
+        <br />
+        <div class="sign_up_form">
+            <h2 style="color: black; text-shadow: none">Sign in</h2>
+            <input type="text" id="username2" placeholder="Username" />
+            <br />
+            <input type="password" id="password2" placeholder="Password" />
+            <br />
+            <button onclick="empty2();">Sign in</button>
+        </div>
+    </body>
 </html>
